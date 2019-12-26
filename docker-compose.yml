@@ -1,0 +1,16 @@
+version: "3"
+services:
+  postgres:
+    image: postgres-pgaudit
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      IS_AUDIT_LOG_ENABLED: "true"
+      PGAUDIT_LOG: "WRITE,READ"
+      PGAUDIT_LOG_LEVEL: "LOG"
+      PGAUDIT_LOG_CATALOG: "on"
+      PGAUDIT_LOG_PARAMETER: "off"
+    # command: printenv
+    ports: 
+      - 5432:5432
+    
